@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/usuarios">Sistema de Usuários</a>
+    <div class="d-flex">
+      <button id="btnLogout" class="btn btn-outline-light">Sair</button>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <h2 class="mb-4">Cadastrar Novo Usuário</h2>
+
+  <form action="/usuarios" method="POST">
+    <div class="mb-3">
+      <label for="nome_usuario" class="form-label">Login (Usuário):</label>
+      <input type="text" class="form-control" id="nome_usuario" name="nome_usuario" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="senha" class="form-label">Senha:</label>
+      <input type="password" class="form-control" id="senha" name="senha" required>
+    </div>
+
+    <div class="mb-3">
+      <label for="funcao" class="form-label">Função:</label>
+      <select class="form-control" id="funcao" name="funcao" required>
+        <option value="">Selecione uma função</option>
+        <option value="admin">Administrador</option>
+        <option value="medico">Médico</option>
+        <option value="recepcionista">Recepcionista</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="/usuarios" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+
+<script>
+  document.getElementById('btnLogout').addEventListener('click', function () {
+    localStorage.removeItem('token');
+    sessionStorage.removeItem('token');
+    window.location.href = '/';
+  });
+</script>

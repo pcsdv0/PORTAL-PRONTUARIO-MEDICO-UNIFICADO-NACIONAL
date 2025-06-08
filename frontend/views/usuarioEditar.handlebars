@@ -1,0 +1,52 @@
+<!DOCTYPE html> 
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Editar Usuário</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4 fw-bold text-light">Editar Usuário</h2>
+
+    <form action="/usuarios/editar/{{usuario.id}}" method="POST">
+      <div class="mb-3">
+        <label for="nome_usuario" class="form-label fw-bold text-light">Login (Usuário)</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nome_usuario"
+          name="nome_usuario"
+          value="{{usuario.nome_usuario}}"
+          required
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="funcao" class="form-label fw-bold text-light">Função</label>
+        <select class="form-control" id="funcao" name="funcao" required>
+          <option value="admin" {{#if (eq usuario.funcao "admin")}}selected{{/if}}>Administrador</option>
+          <option value="medico" {{#if (eq usuario.funcao "medico")}}selected{{/if}}>Médico</option>
+          <option value="recepcionista" {{#if (eq usuario.funcao "recepcionista")}}selected{{/if}}>Recepcionista</option>
+        </select>
+      </div>
+
+      <!-- Se você quiser permitir troca de senha aqui, descomente o bloco abaixo
+      <div class="mb-3">
+        <label for="senha" class="form-label fw-bold text-light">Nova Senha</label>
+        <input
+          type="password"
+          class="form-control"
+          id="senha"
+          name="senha"
+          placeholder="Deixe em branco para não alterar"
+        >
+      </div>
+      -->
+
+      <button type="submit" class="btn btn-primary">Salvar Alterações</button>
+      <a href="/usuarios" class="btn btn-secondary">Cancelar</a>
+    </form>
+  </div>
+</body>
+</html>
