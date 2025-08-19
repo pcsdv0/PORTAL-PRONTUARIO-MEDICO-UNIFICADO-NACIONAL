@@ -95,7 +95,7 @@ npm install
 npm start
 
 
-## 🙋‍♂️ Equipe e Contribuições
+## Equipe e Contribuições
 
 Projeto desenvolvido por estudantes do 3º Período de Sistemas de Informação — Noite
 Contribuições e sugestões são bem-vindas! 💡
