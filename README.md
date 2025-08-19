@@ -62,7 +62,7 @@ Portal de Prontuário Médico Unificado Nacional
 
 
 
-## 🖥Requisitos de Infraestrutura
+## Requisitos de Infraestrutura
 
 - **Sistema Operacional**: Ubuntu Server 20.04 LTS ou superior
 - **Memória RAM**: Mínimo de 2 GB
